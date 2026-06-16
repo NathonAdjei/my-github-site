@@ -59,6 +59,22 @@
       }
       .theme-btn:hover { opacity: 0.9; }
 
+      /* Project Button Link */
+      .project-link-btn {
+        display: inline-block;
+        background: var(--h1-color);
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: 10px;
+        transition: transform 0.2s;
+      }
+      .project-link-btn:hover {
+        transform: scale(1.03);
+      }
+
       /* Countdown Section Layout */
       .countdown-box {
         background: var(--card-bg);
@@ -100,9 +116,13 @@
     <h2>My Goals for This Course</h2>
     <p>I want to learn how to make my own code on GitHub.</p>
  
+    <h2>My Projects</h2>
+    <p>Check out the app I am working on in Code.org App Lab:</p>
+    <a href="https://studio.code.org/projects/applab/f4f83426-e8ec-4c4f-a672-f3dc0707c1cb" target="_blank" class="project-link-btn">🚀 View My App Lab Project</a>
+
     <h2>My GitHub</h2>
-    <p>Check out my projects: 
-      <a href="https://github.com">NathonAdjei</a>
+    <p>Check out my source code: 
+      <a href="https://github.com/NathonAdjei">NathonAdjei</a>
     </p>
 
     <!-- Theme Logic & Live Timer Logic Script -->
@@ -133,7 +153,6 @@
           return;
         }
 
-        // Time calculations for days, hours, minutes and seconds
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
         const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
@@ -143,7 +162,6 @@
           `${days}d ${hours}h ${minutes}m ${seconds}s`;
       }
 
-      // Initialize and update the timer every single second
       updateCountdown();
       const timerInterval = setInterval(updateCountdown, 1000);
     </script>
